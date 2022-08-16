@@ -1,0 +1,12 @@
+extends layout/main-layout.pug
+
+block content 
+        h1 #{pageTitle}
+        form(action="/register", method="post") 
+            div 
+                label(for="email_id") Enter email_id
+                input(type="text" name='email_id')
+            div 
+                label(for="password") Enter Password
+                input(type="password" name='password')
+            button(type="submit") Sign Up

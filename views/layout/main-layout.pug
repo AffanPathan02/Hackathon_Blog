@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx', crossorigin='anonymous')
+        title #{pageTitle} 
+        nav.navbar.navbar-expand-lg.bg-dark
+            .container-fluid
+                
+                a.navbar-brandp.text-white(href='/') Hackathon
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                  span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                  ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                    if(isAuthenticated)
+                      li.nav-item
+                        a.nav-link.active.text-white(aria-current='page' href='/create_post') Create Post
+                      form.d-flex(action="/logout", method="post") 
+                        button.btn.btn-outline-success(type='submit') Logout
+                          a(href="/logout") 
+                    if (!isAuthenticated)
+                      form.d-flex(action='/login')
+                        button.btn.btn-outline-success(type='submit') Login
+                        a(href="/login") 
+                  
+                    
+
+
+        
+    body
+        block content 
+//add nav bar
+//add pages like contact_us,login,post_page

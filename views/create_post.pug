@@ -1,0 +1,24 @@
+extends layout/main-layout.pug
+
+block content 
+    h1 This is #{page_name}
+    
+    form(action="/create_post", method="post") 
+        br
+        br
+
+        label(for="username")  Enter Your Name 
+        input(type="text" name='username')
+
+        br
+        br
+        label(for="hackathon_info") Enter Hackathon Info 
+        input(type="text",name='hackathon_info')
+
+        br
+        br
+        label(for="description") Enter your Experience
+        br
+        textarea(name="description", cols="", rows="") 
+
+        button(type="submit") Submit
